@@ -1375,7 +1375,7 @@ button:focus-visible,
   }
 
   .app-shell {
-    width: 100%;
+    width: 100vw;
     min-width: 0;
     max-width: none;
     min-height: 100vh;
@@ -1390,10 +1390,10 @@ button:focus-visible,
   }
 
   .phone-card {
-    width: 100%;
+    width: 100vw;
     max-width: none;
     min-height: 100vh;
-    padding: 18px 12px 28px;
+    padding: 18px 10px 28px;
     border-radius: 0;
     box-shadow: none;
     overflow: visible;
@@ -1407,15 +1407,16 @@ button:focus-visible,
   .featured-tasks {
     overflow-x: visible;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    gap: 8px;
     margin-bottom: 14px;
     padding-bottom: 0;
   }
 
   .feature-card {
+    min-width: 0;
     min-height: 112px;
     border-radius: 18px;
-    padding: 12px;
+    padding: 12px 10px;
   }
 
   .feature-card h3 {
@@ -1441,9 +1442,14 @@ button:focus-visible,
   }
 
   .task-form {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 48px;
-    gap: 8px;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) 44px;
+    gap: 6px;
     margin-bottom: 18px;
+  }
+
+  .primary-button {
+    width: 44px;
+    min-height: 44px;
   }
 
   #task-input,
@@ -1478,11 +1484,13 @@ button:focus-visible,
   }
 
   .date-strip {
-    gap: 8px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px;
     margin: 20px 0;
   }
 
   .date-strip span {
+    min-width: 0;
     min-height: 64px;
     border-radius: 18px;
   }
@@ -1498,9 +1506,11 @@ button:focus-visible,
 
   .toolbar {
     width: 100%;
+    min-width: 0;
   }
 
   .filter-button {
+    min-width: 0;
     flex: 1;
   }
 
