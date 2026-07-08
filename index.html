@@ -1,0 +1,166 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>&#12510;&#12452; To-Do &#12450;&#12503;&#12522;</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="intro-card" aria-label="Welcome">
+        <div class="cartoon-showcase" aria-hidden="true">
+          <div class="spark spark-one"></div>
+          <div class="spark spark-two"></div>
+          <img class="cartoon-img student-img" src="assets/student-crop.png" alt="">
+          <div class="user-badge">
+            <span class="avatar-stack">
+              <img src="assets/student-crop.png" alt="">
+              <img src="assets/manager-crop.png" alt="">
+            </span>
+            <strong>To-Do</strong>
+            <small>Daily Task</small>
+          </div>
+        </div>
+
+        <div class="art-board">
+          <div class="leaf leaf-one"></div>
+          <div class="leaf leaf-two"></div>
+          <div class="cup">
+            <span class="pencil blue"></span>
+            <span class="pencil pink"></span>
+          </div>
+          <div class="pen"></div>
+          <div class="plant"></div>
+        </div>
+
+        <div class="intro-copy">
+          <div class="slider-dots" aria-hidden="true">
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <h1>&#27598;&#26085;&#12398;&#12479;&#12473;&#12463;&#12434;&#31649;&#29702;</h1>
+          <p>&#20104;&#23450;&#12289;&#20778;&#20808;&#24230;&#12289;&#12459;&#12486;&#12468;&#12522;&#12540;&#12289;&#32224;&#20999;&#26085;&#12434;&#12414;&#12392;&#12417;&#12390;&#31649;&#29702;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;</p>
+          <button class="round-link" id="start-button" type="button" aria-label="Go to add task">-&gt;</button>
+        </div>
+      </section>
+
+      <section class="phone-card" aria-labelledby="app-title">
+        <div class="web-hero-card" aria-hidden="true">
+          <div class="web-hero-copy">
+            <span>My To-Do App</span>
+            <h2>&#12479;&#12473;&#12463;&#31649;&#29702;&#12434;&#12418;&#12387;&#12392;&#27005;&#12375;&#12367;</h2>
+            <p>&#26908;&#32034;&#12289;&#12459;&#12486;&#12468;&#12522;&#12540;&#12289;&#32224;&#20999;&#26085;&#12289;&#12480;&#12540;&#12463;&#12514;&#12540;&#12489;&#12414;&#12391;&#19968;&#12388;&#12398;&#30011;&#38754;&#12391;&#31649;&#29702;&#12391;&#12365;&#12414;&#12377;&#12290;</p>
+          </div>
+          <img class="cartoon-img manager-img" src="assets/manager-crop.png" alt="">
+        </div>
+
+        <header class="app-topbar">
+          <button class="square-button" type="button" aria-label="Menu">::</button>
+          <time datetime="2026-07-08">2026&#24180;7&#26376;8&#26085;</time>
+          <button class="square-button" id="theme-toggle" type="button" aria-label="Dark mode">&#26376;</button>
+        </header>
+
+        <div class="app-header">
+          <div>
+            <p class="eyebrow">&#12479;&#12473;&#12463;&#31649;&#29702;</p>
+            <h2 id="app-title">&#20170;&#26085;&#12398;&#12479;&#12473;&#12463;</h2>
+            <p class="task-summary">&#20214;&#25968; <span id="remaining-count">0</span> &#20214;</p>
+          </div>
+        </div>
+
+        <div class="date-strip" aria-label="Week dates">
+          <span><strong>6</strong>&#26376;</span>
+          <span class="active"><strong>7</strong>&#28779;</span>
+          <span><strong>8</strong>&#27700;</span>
+          <span><strong>9</strong>&#26408;</span>
+        </div>
+
+        <div class="featured-tasks" aria-label="Featured projects">
+          <article class="feature-card orange">
+            <span>&#36914;&#34892;&#20013;</span>
+            <h3>Web UI &#12487;&#12470;&#12452;&#12531;</h3>
+            <p>&#20840;14&#12479;&#12473;&#12463;</p>
+          </article>
+          <article class="feature-card aqua">
+            <span>&#26032;&#35215;</span>
+            <h3>&#12514;&#12496;&#12452;&#12523;&#12450;&#12503;&#12522;</h3>
+            <p>&#20840;8&#12479;&#12473;&#12463;</p>
+          </article>
+        </div>
+
+        <div class="controls-panel">
+          <label class="sr-only" for="search-input">&#26908;&#32034;</label>
+          <input class="search-input" id="search-input" type="search" placeholder="&#12479;&#12473;&#12463;&#12434;&#26908;&#32034;...">
+
+          <div class="stats-row" aria-label="Task counts">
+            <span>&#20170;&#26085; <strong id="today-count">0</strong></span>
+            <span>&#20104;&#23450; <strong id="upcoming-count">0</strong></span>
+            <span>&#23436;&#20102; <strong id="completed-count">0</strong></span>
+          </div>
+        </div>
+
+        <form class="task-form" id="task-form">
+          <label class="sr-only" for="task-input">&#26032;&#12375;&#12356;&#12479;&#12473;&#12463;</label>
+          <input id="task-input" type="text" placeholder="&#26032;&#12375;&#12356;&#12479;&#12473;&#12463;&#12434;&#36861;&#21152;..." autocomplete="off" required>
+
+          <label class="sr-only" for="priority-select">&#20778;&#20808;&#24230;</label>
+          <select id="priority-select" aria-label="Priority">
+            <option value="normal">&#36890;&#24120;</option>
+            <option value="high">&#39640;</option>
+            <option value="low">&#20302;</option>
+          </select>
+
+          <label class="sr-only" for="category-select">&#12459;&#12486;&#12468;&#12522;&#12540;</label>
+          <select id="category-select" aria-label="Category">
+            <option value="work">&#20181;&#20107;</option>
+            <option value="study">&#21193;&#24375;</option>
+            <option value="personal">&#20491;&#20154;</option>
+          </select>
+
+          <label class="sr-only" for="due-date-input">&#32224;&#20999;&#26085;</label>
+          <input id="due-date-input" type="date" aria-label="Due date">
+
+          <button class="primary-button" type="submit" aria-label="Add task">+</button>
+        </form>
+
+        <div class="section-heading">
+          <h3>&#12479;&#12473;&#12463;&#19968;&#35239;</h3>
+          <div class="toolbar view-tabs" aria-label="Task views">
+            <button class="filter-button active" type="button" data-filter="today">&#20170;&#26085;</button>
+            <button class="filter-button" type="button" data-filter="upcoming">&#20104;&#23450;</button>
+            <button class="filter-button" type="button" data-filter="completed">&#23436;&#20102;</button>
+          </div>
+        </div>
+
+        <button class="clear-button" id="clear-completed" type="button">&#23436;&#20102;&#12479;&#12473;&#12463;&#12434;&#21066;&#38500;</button>
+
+        <ul class="task-list" id="task-list" aria-label="Task list"></ul>
+
+        <p class="empty-message" id="empty-message">&#12414;&#12384;&#12479;&#12473;&#12463;&#12364;&#12354;&#12426;&#12414;&#12379;&#12435;&#12290;&#19978;&#12363;&#12425;&#26368;&#21021;&#12398;&#12479;&#12473;&#12463;&#12434;&#36861;&#21152;&#12375;&#12414;&#12375;&#12423;&#12358;&#12290;</p>
+      </section>
+    </main>
+
+    <template id="task-template">
+      <li class="task-item">
+        <label class="task-check">
+          <input type="checkbox">
+          <span class="checkmark" aria-hidden="true"></span>
+          <span class="task-title"></span>
+        </label>
+        <div class="task-meta">
+          <span class="priority-pill"></span>
+          <span class="category-pill"></span>
+          <span class="due-date"></span>
+        </div>
+        <div class="task-actions">
+          <button class="edit-button" type="button" aria-label="Edit task" title="Edit task">&#32232;&#38598;</button>
+          <button class="icon-button" type="button" aria-label="Delete task" title="Delete task">&times;</button>
+        </div>
+      </li>
+    </template>
+
+    <script src="app.js"></script>
+  </body>
+</html>
