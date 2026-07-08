@@ -1543,3 +1543,53 @@ button:focus-visible,
     width: 40px;
   }
 }
+
+@media (max-width: 700px) {
+  body {
+    display: block;
+    background: var(--phone);
+  }
+
+  .app-shell {
+    width: 100%;
+    max-width: none;
+    min-height: 100dvh;
+  }
+
+  .phone-card {
+    width: 100%;
+    max-width: none;
+    min-height: 100dvh;
+    padding-inline: max(10px, env(safe-area-inset-left)) max(10px, env(safe-area-inset-right));
+  }
+
+  .app-topbar,
+  .app-header,
+  .date-strip,
+  .featured-tasks,
+  .controls-panel,
+  .task-form,
+  .section-heading,
+  .clear-button,
+  .task-list,
+  .empty-message {
+    width: 100%;
+    max-width: none;
+  }
+
+  .date-strip,
+  .featured-tasks,
+  .stats-row,
+  .task-form,
+  .toolbar {
+    min-width: 0;
+  }
+
+  .date-strip > *,
+  .featured-tasks > *,
+  .stats-row > *,
+  .task-form > *,
+  .toolbar > * {
+    min-width: 0;
+  }
+}
